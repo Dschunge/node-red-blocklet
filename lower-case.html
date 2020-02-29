@@ -3,14 +3,15 @@
         category: 'Blocklet',
         color: '#00cea5',
         defaults: {
-            name: {value:""},
-            address: {value:""}
+            name   : { value:"" },
+            address: { value:"" },
+            apikey : { value:"" }
         },
         inputs:1,
         outputs:1,
         icon: "logo.png",
         label: function() {
-            return this.name||"lower-case";
+            return this.name||"Blocklet";
         }
     });
 </script>
@@ -21,7 +22,7 @@
         <input type="text" id="node-input-name" placeholder="Name">        
     </div>
     <div class="form-row">
-        <label for="node-input-apikey"><i class="fa fa-bitcoin"></i> Amberdata API Key</label>
+        <label for="node-input-apikey"><i class="fa fa-key"></i>API Key</label>
         <input type="text" id="node-input-apikey" placeholder="0xf2...5a656">
     </div>
     <div class="form-row">
@@ -30,7 +31,7 @@
     </div>
     <div class="form-tips"><b>Info:</b> 
         In order to make this node working, you need an API Key from Amberdata.
-        <a href="https://amberdata.io">Get your API Key</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://amberdata.io">Get your API Key here</a>
     </div>
     <div class="form-tips"><b>Tip:</b> Enter a valid token address you want to watch for.</div>
 </script>
