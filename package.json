@@ -10,9 +10,9 @@
     "type": "git",
     "url": "git+ssh://git@github.com/Dschunge/node-red-blocklet.git"
   },
-  "node-red" : {
+  "node-red": {
     "nodes": {
-        "lower-case": "lower-case.js"
+      "lower-case": "lower-case.js"
     }
   },
   "keywords": [
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/Dschunge/node-red-blocklet/issues"
   },
-  "homepage": "https://github.com/Dschunge/node-red-blocklet#readme"
+  "homepage": "https://github.com/Dschunge/node-red-blocklet#readme",
+  "dependencies": {
+    "ws": "^7.2.1"
+  }
 }
