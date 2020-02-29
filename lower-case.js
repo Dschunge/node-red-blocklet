@@ -2,8 +2,9 @@ module.exports = function(RED) {
     function LowerCaseNode(config) {
         connect = (socket, address) => {
             const BLOCK = 0, UNCLE = 1, TXN = 2, INTERNAL_MSG = 3
-            const tmp = `{"jsonrpc":"2.0","id":${TXN},"method":"subscribe","params":["address:transactions",{"address":"${address}"}]}`
-            socket.send(tmp);           
+            const cmd = `{"jsonrpc":"2.0","id":"${TXN}","method":"subscribe","params":["address:transactions",{"address":"${address}"}]}`
+            console.log('jsonrpc: ', cmd)
+            socket.send(cmd);           
         }   
 
         RED.nodes.createNode(this,config);        
