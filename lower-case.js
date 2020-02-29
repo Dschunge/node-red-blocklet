@@ -24,7 +24,7 @@ module.exports = function(RED) {
           const msg = JSON.parse(message.data);
           if (msg.params) {
             console.log('transaction received: ', msg.params.result)
-            node.send(msg.params.result);
+            node.send(JSON.stringify(msg.params.result));
           }
         });
 
