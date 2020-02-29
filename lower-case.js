@@ -16,7 +16,7 @@ module.exports = function(RED) {
         // Connection opened
         socket.addEventListener('open', (event) => {
             console.log('Connection opened - ');
-            connect(socket, this.addres)
+            connect(socket, this.address)
         });
 
         // Listen for messages
