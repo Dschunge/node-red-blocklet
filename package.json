@@ -1,0 +1,30 @@
+{
+  "name": "node-red-blocklet",
+  "version": "1.0.0",
+  "description": "A Blocket node for Node-Red listen for Blockchain transactions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Dschunge/node-red-blocklet.git"
+  },
+  "node-red" : {
+    "nodes": {
+        "lower-case": "lower-case.js"
+    }
+  },
+  "keywords": [
+    "Blockchain",
+    "Transactions",
+    "Node-Red",
+    "Amberdata"
+  ],
+  "author": "Juergen Schaar (Blockchainfirst)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Dschunge/node-red-blocklet/issues"
+  },
+  "homepage": "https://github.com/Dschunge/node-red-blocklet#readme"
+}
