@@ -21,7 +21,7 @@ module.exports = function(RED) {
         // Listen for messages
         socket.addEventListener('message', (responseHandler) => {
           console.log('message: ', JSON.parse(responseHandler.data))
-          node.send(responseHandler.data);
+          node.send(responseHandler.data.params.result);
         });
 
         // Listen for messages
