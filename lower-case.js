@@ -10,8 +10,9 @@ module.exports = function(RED) {
         RED.nodes.createNode(this,config);        
         console.log('config: ', config);
         this.address = config.address;
+        this.apikey = config.apikey;
         const WebSocket = require('ws');
-        const socket = new WebSocket('wss://ws.web3api.io?x-api-key=UAK000000000000000000000000demo0001&x-amberdata-blockchain-id=ethereum-rinkeby');
+        const socket = new WebSocket(`wss://ws.web3api.io?x-api-key=${this.apikey}&x-amberdata-blockchain-id=ethereum-rinkeby`);
 
         // Connection opened
         socket.addEventListener('open', (event) => {
@@ -24,11 +25,8 @@ module.exports = function(RED) {
           console.log('message: ', JSON.parse(message.data))
           const transaction = JSON.parse(message.data);
           if (transaction.params) {
-            console.log('transaction received: ', transaction.params.result)
-
-            const msg = {
-                payload: transaction.params.result
-            } 
+            console.log('transaction received: ', transaction.params.result);
+            const msg = { payload: transaction.params.result } ;
             node.send(msg);
           }
         });
