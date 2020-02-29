@@ -19,10 +19,10 @@ module.exports = function(RED) {
         });
 
         // Listen for messages
-        socket.addEventListener('message', (responseHandler) => {
-          console.log('message: ', JSON.parse(responseHandler.data))
-          if (responseHandler.data.params.result) {
-            node.send(responseHandler.data.params.result);
+        socket.addEventListener('message', (message) => {
+          console.log('message: ', JSON.parse(message.data))
+          if (message.data.params) {
+            node.send(message.data.params.result);
           }
         });
 
