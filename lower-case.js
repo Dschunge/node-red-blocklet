@@ -46,6 +46,6 @@ module.exports = function(RED) {
             console.log('close nodes')
         });
     }
-    RED.nodes.registerType("lower-case", LowerCaseNode);
+    RED.nodes.registerType("blocklet", LowerCaseNode);
  
 }

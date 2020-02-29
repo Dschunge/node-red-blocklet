@@ -12,7 +12,7 @@
   },
   "node-red": {
     "nodes": {
-      "lower-case": "lower-case.js"
+      "blocklet": "lower-case.js"
     }
   },
   "keywords": [
