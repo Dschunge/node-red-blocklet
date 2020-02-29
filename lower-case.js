@@ -1,8 +1,8 @@
 module.exports = function(RED) {    
     function LowerCaseNode(config) {
-        connect = socket => {
+        connect = (socket, address) => {
             const BLOCK = 0, UNCLE = 1, TXN = 2, INTERNAL_MSG = 3
-            const tmp = '{"jsonrpc":"2.0","id":2,"method":"subscribe","params":["address:transactions",{"address":"0xf2FA00B8E0117BA72324EbBc5D3514B722b5a656"}]}'
+            const tmp = `{"jsonrpc":"2.0","id":${TXN},"method":"subscribe","params":["address:transactions",{"address":"${address}"}]}`
             socket.send(tmp);           
         }   
 
@@ -15,7 +15,7 @@ module.exports = function(RED) {
         // Connection opened
         socket.addEventListener('open', (event) => {
             console.log('Connection opened - ');
-            connect(socket)
+            connect(socket, this.addres)
         });
 
         // Listen for messages
