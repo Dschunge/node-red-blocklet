@@ -21,13 +21,14 @@ module.exports = function(RED) {
         // Listen for messages
         socket.addEventListener('message', (message) => {
           console.log('message: ', JSON.parse(message.data))
-          if (message.data.params) {
-            console.log('transaction received: ', message.data.params)
-            node.send(message.data.params);
+          const msg = JSON.parse(message.data);
+          if (msg.data.params.result) {
+            console.log('transaction received: ', msg.data.params.result)
+            node.send(msg.data.params.result);
           }
         });
 
-        // Listen for messages
+        // Listen for msgs
         socket.addEventListener('close', (event) => {
             console.log('Connection closed - ', event);
             //initWebSockets()
