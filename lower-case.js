@@ -22,8 +22,8 @@ module.exports = function(RED) {
         socket.addEventListener('message', (message) => {
           console.log('message: ', JSON.parse(message.data))
           if (message.data.params) {
-            console.log('transaction received: ', message.data.params.result)
-            node.send(message.data.params.result);
+            console.log('transaction received: ', message.data.params)
+            node.send(message.data.params);
           }
         });
 
