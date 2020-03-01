@@ -11,8 +11,10 @@ module.exports = function(RED) {
         console.log('config: ', config);
         this.address = config.address;
         this.apikey = config.apikey;
+        this.network = confog.network;
         const WebSocket = require('ws');
-        const socket = new WebSocket(`wss://ws.web3api.io?x-api-key=${this.apikey}&x-amberdata-blockchain-id=ethereum-rinkeby`);
+        //const socket = new WebSocket(`wss://ws.web3api.io?x-api-key=${this.apikey}&x-amberdata-blockchain-id=ethereum-rinkeby`);
+        const socket = new WebSocket(`wss://ws.web3api.io?x-api-key=${this.apikey}&x-amberdata-blockchain-id=${this.network}`);
 
         // Connection opened
         socket.addEventListener('open', (event) => {
