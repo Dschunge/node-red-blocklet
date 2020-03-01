@@ -47,7 +47,7 @@ module.exports = function(RED) {
                 node.status({fill:"red",shape:"dot",text:"Error: Connection closed."});
             });
         } else {
-            return callback(RED._("forecastio.error.no-credentials"));
+            node.status({fill:"red",shape:"dot",text:"Error: Invalid or missing Data provided."});
         }        
         
         node.on('input', function(msg) {
