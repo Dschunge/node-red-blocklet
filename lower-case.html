@@ -4,15 +4,29 @@
         color: '#00cea5',
         defaults: {
             name   : { value:"" },
-            address: { value:"", required: true },
+            // address: { value:"", required: true },
             apikey : { value:"", required: true },
-            network: { value:"", required: true }
+            network: { value:"", required: true },
+            address: {
+                value: "",
+                required: true,
+                validate: function (v) {
+                    console.log('validate: ', v)
+                    //return ['encode', 'decode', 'escape', 'unescape'].includes(v)
+                },
+            },
         },
         inputs:1,
         outputs:1,
         icon: "logo.png",
         label: function() {
             return this.name || "Blocklet";
+        },
+        oneditprepare: function() {
+        },
+        oneditsave: function() {
+        },
+        oneditcancel: function(adding) {
         }
     });
 </script>
@@ -93,4 +107,6 @@
             <li><a>Twitter API docs</a> - full description of <code>msg.tweet</code> property</li>
             <li><a>GitHub</a> - the nodes github repository</li>
         </ul>
+    <p>Powered by <a href="https://blockchainfirst.org/" target="_blank">Blockchainfirst</a>.</p>    
+    <p>based on Amberdata APIs <a target="_blank" rel="noopener noreferrer" href="https://amberdata.io">Amberdata</a>.</p>        
 </script>
