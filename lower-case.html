@@ -4,14 +4,14 @@
         color: '#00cea5',
         defaults: {
             name   : { value:"" },
-            address: { value:"" },
-            apikey : { value:"" }
+            address: { value:"", required: true },
+            apikey : { value:"", required: true }
         },
         inputs:1,
         outputs:1,
         icon: "logo.png",
         label: function() {
-            return this.name||"Blocklet";
+            return this.name || "Blocklet";
         }
     });
 </script>
@@ -25,6 +25,19 @@
         <label for="node-input-apikey"><i class="fa fa-key"></i> API Key</label>
         <input type="text" id="node-input-apikey" placeholder="">
     </div>
+    <div class="form-row">
+        <label for="node-input-network"><i class="fa fa-cog"></i> Network</label>
+        <select id="node-input-network">
+            <option value="408fa195a34b533de9ad9889f076045e">Bitcoin Mainnet BTC</option>
+            <option value="43b45e71cc0615b491cb699e7071fc06">Bitcoin Cash BCH </option>
+            <option value="a818635d36dbe125e26167c4438e2217">Bitcoin SV BSV</option>
+            <option value="1c9c969065fcd1cf">Ethereum Mainnet ETH</option>
+            <option value="1b3f7a72b3e99c13">Ethereum Rinkeby Testnet ETH</option>
+            <option value="f94be61fd9f4fa684f992ddfd4e92272">Litcoin LTC</option>
+            <option value="822e2ebe02f74df8">Stellar XLM</option>
+            <option value="b7d4f994f33c709be4ce6cbae31d7b8e">ZCash</option>
+        </select>
+    </div>   
     <div class="form-row">
         <label for="node-input-address"><i class="fa fa-bitcoin"></i> Address</label>
         <input type="text" id="node-input-address" placeholder="0xf2...5a656">
